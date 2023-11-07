@@ -10,6 +10,17 @@ flow = pd.read_csv("csv_files/flowmatrix.csv", header = None)
 flow = np.array(flow)
 print(flow,"\n\n")
 
+for i in range(len(flow)):
+    if flow[i][-1] != flow[i][0] or flow[0][i] != flow[-1][i]:
+        work = False
+    else:
+        work = True
+if work is True:
+    print("matrix works")
+else:
+    print("does not work")
+
+
 
 distance = distmatrix(9,9)
 # distance = np.round(distance,decimals=3)
@@ -39,7 +50,7 @@ def energy(x):
     hamiltonian = 0
     for j in range(len(x)):
         for jj in range(j+1,len(x)):
-            delta = flow[x[j]-1][x[jj]-1] * distance[j][jj]*x[j]*x[jj]/(x[j]*x[jj]+1)
+            delta = x[j]*x[jj] * (flow[x[j]-1][x[jj]-1] * distance[j][jj]/(x[j]*x[jj]+1))
             hamiltonian += delta
     
     penalty = 0
