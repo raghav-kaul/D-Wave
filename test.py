@@ -1,28 +1,17 @@
 import numpy as np
 import pandas as pd
 import sys
-from distance_matrix_creator import distmatrix
+from distance_matrix_creator import rectdistancematrix
 np.set_printoptions(linewidth=1000, suppress=True,threshold= sys.maxsize)
-flow = pd.read_csv("csv_files/flowmatrix.csv", header = None)
-# flow = (flow.to_numpy()/3)**5
-# flow = np.round(flow)
+flow = pd.read_csv("csv_files/flowmatrixdqm.csv", header = None)
+flow = (flow.to_numpy()/3)**3
+flow = np.round(flow)
 # flow = np.triu(flow)
 flow = np.array(flow)
-print(flow,"\n\n")
-
-for i in range(len(flow)):
-    if flow[i][-1] != flow[i][0] or flow[0][i] != flow[-1][i]:
-        work = False
-    else:
-        work = True
-if work is True:
-    print("matrix works")
-else:
-    print("does not work")
+print(flow )
 
 
-
-distance = distmatrix(9,9)
+distance = rectdistancematrix(9,9)
 # distance = np.round(distance,decimals=3)
 # distance = np.triu(np.array(distance))
 distance = (np.array(distance))#**3)/5
@@ -45,12 +34,16 @@ x = [13,13,11,10,10,10,9,4,9,9,9,9,9,9,4,6,4,9,9,9,9,9,9,9,8,8,7,7,7,7,7,7,7,7,4
 print(x)
 print(len(x))
 
+j = 23
+jj = 79
+print(f"p1 = {x[j]}, p2 = {x[jj]}, flow = {flow[x[j]][x[jj]]}")
 def energy(x):
     energy = 0
     hamiltonian = 0
     for j in range(len(x)):
         for jj in range(j+1,len(x)):
-            delta = x[j]*x[jj] * (flow[x[j]-1][x[jj]-1] * distance[j][jj]/(x[j]*x[jj]+1))
+            # print(f'{x[j]},{x[jj]}')
+            delta = x[j]*x[jj] * (flow[x[j]][x[jj]] * distance[j][jj]/16900)
             hamiltonian += delta
     
     penalty = 0
@@ -62,3 +55,14 @@ def energy(x):
     return energy
 # energy(x)
 print(energy(x))
+ratios = set()
+def ratio(facilities):
+    for i in range(len(facilities)+1):
+        for j in range(len(facilities)+1):
+            ratio = i*j/(16900)
+            ratios.add(ratio)
+    return ratios
+set = ratio(facilities)
+print(set)
+delta = max(set) - min(set)
+print(delta)
