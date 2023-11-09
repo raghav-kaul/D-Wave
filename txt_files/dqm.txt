@@ -1,1 +1,0 @@
-<dimod.discrete.discrete_quadratic_model.DiscreteQuadraticModel object at 0x000001F1AC3414E0>
