@@ -6,7 +6,19 @@ def distance(i,j,ii,jj):
 
     return d
 
-def distmatrix(row,column):
+def squaredistmatrix(length):
+    distmat = []
+    for i in range(length):
+        for j in range(length):
+            Dist = []
+            for ii in range(length):
+                for jj in range(length):
+                    dist = distance(i,j,ii,jj)
+                    Dist.append(dist)
+            distmat.append(Dist)
+    return distmat
+
+def rectdistancematrix(row,column):
     distmat = []
     for i in range(row):
         for j in range(column):
@@ -17,4 +29,3 @@ def distmatrix(row,column):
                     Dist.append(dist)
             distmat.append(Dist)
     return distmat
-
