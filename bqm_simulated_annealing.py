@@ -103,8 +103,8 @@ file2.close()
 
 # sampler = LeapHybridSampler()
 sampler = SimulatedAnnealingSampler()
-numreads = 1000 #number of times algorithm is applied
-numsweeps = 400000 #number of metropolis updates for simulated annealer
+numreads = 1 #number of times algorithm is applied
+numsweeps = 1000 #number of metropolis updates for simulated annealer
 timelimit = 60 #time limit for hybrid sampler
 
 t1 = time.time()
@@ -146,7 +146,8 @@ for i in printout:
 ### Plotting the Layout using Heatmap
 fig, ax = plt.subplots(figsize=(9, 10))
 fig1 = sns.heatmap(layout,annot = layout, vmin = 0, vmax = len(facilities)).set(title = "Final Layout")
-plt.savefig(f'Images/v2_{sys.argv[1]}SA_layout_sweeps_{numsweeps}_IF_10.png')
+# plt.savefig(f'Images/v2_{sys.argv[1]}SA_layout_sweeps_{numsweeps}_IF_10.png')
+plt.show()
 ### Check to ensure all facilities are assigned correct sizes
 correct_size = True
 printout = np.array(printout)
@@ -174,9 +175,10 @@ if ctr1 == 81:
 
 fig, ax = plt.subplots(figsize=(17, 9))
 fig2 = sns.heatmap(printout,annot = printout, vmax= 1, vmin=0 ).set(title = "Final Matrix")
-plt.savefig(f'Images/v2_{sys.argv[1]}SA_matrix_sweeps_{numsweeps}_IF_10.png')
+# plt.savefig(f'Images/v2_{sys.argv[1]}SA_matrix_sweeps_{numsweeps}_IF_10.png')
+plt.show()
 print(f'sample energy = {sampleset.first.energy}')
-np.save(f'Output_arrays/v2_{sys.argv[1]}SA_matrix_sweeps_{numsweeps}_IF_10.npy',printout)
-np.save(f'Output_arrays/v2_{sys.argv[1]}SA_layout_sweeps_{numsweeps}_IF_10.npy',layout)
+# np.save(f'Output_arrays/v2_{sys.argv[1]}SA_matrix_sweeps_{numsweeps}_IF_10.npy',printout)
+# np.save(f'Output_arrays/v2_{sys.argv[1]}SA_layout_sweeps_{numsweeps}_IF_10.npy',layout)
 t4 = time.time()
 print(f'postprocess finished in {t4-t3} seconds') 
