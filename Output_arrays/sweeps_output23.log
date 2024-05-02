@@ -1,0 +1,31 @@
+solver finished in 46783.29833698273 seconds
+Facility  1 	 correct size of 10 
+
+Facility  2 	 correct size of 4 
+
+Facility  3 	 correct size of 7 
+
+Facility  4 	 correct size of 4 
+
+Facility  5 	 correct size of 2 
+
+Facility  6 	 correct size of 1 
+
+Facility  7 	 correct size of 14 
+
+Facility  8 	 correct size of 2 
+
+Facility  9 	 correct size of 14 
+
+Facility  10 	 correct size of 3 
+
+Facility  11 	 correct size of 1 
+
+Facility  12 	 correct size of 3 
+
+Facility  13 	 correct size of 2 
+
+all facilities Correct Size
+No Overlaps
+sample energy = -474.58399626240134
+postprocess finished in 3.016982078552246 seconds

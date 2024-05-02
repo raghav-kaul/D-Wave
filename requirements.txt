@@ -1,12 +1,5 @@
-dimod==0.12.12
-dwave_cloud_client==0.10.6
-dwave_drivers==0.4.4
-dwave_inspector==0.4.2
-dwave_inspectorapp==0.3.1
-dwave_preprocessing==0.6.3
-dwave_samplers==1.1.0
-dwave_system==1.20.0
 numpy==1.23.5
 pandas==2.0.2
 matplotlib
 seaborn
+dwave-ocean-sdk

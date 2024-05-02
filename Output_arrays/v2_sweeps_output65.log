@@ -1,0 +1,30 @@
+solver finished in 82523.36467123032 seconds
+Facility  1 	 wrong size. True Size =  10 Calc size =  9 
+
+Facility  2 	 correct size of 4 
+
+Facility  3 	 wrong size. True Size =  7 Calc size =  6 
+
+Facility  4 	 correct size of 4 
+
+Facility  5 	 correct size of 2 
+
+Facility  6 	 correct size of 1 
+
+Facility  7 	 wrong size. True Size =  14 Calc size =  12 
+
+Facility  8 	 correct size of 2 
+
+Facility  9 	 wrong size. True Size =  14 Calc size =  12 
+
+Facility  10 	 correct size of 3 
+
+Facility  11 	 correct size of 1 
+
+Facility  12 	 correct size of 3 
+
+Facility  13 	 correct size of 2 
+
+No Overlaps
+sample energy = 16341.890001786873
+postprocess finished in 3.171476125717163 seconds
